@@ -4,7 +4,7 @@ export DEBIAN_FRONTEND=noninteractive
 
 apt-get update > /dev/null
 
-apt-get -y install build-essential git-core unzip xvfb firefox chromium-browser ruby1.9.1 ruby1.9.1-dev libxml2-dev libxslt1-dev
+apt-get -y install build-essential git-core unzip xvfb firefox chromium-browser ruby1.9.3 ruby1.9.3-dev libxml2-dev libxslt1-dev
 
 gem install bundler pry
 
@@ -24,8 +24,8 @@ if [ -f "/home/vagrant/bin/chromedriver" ]; then
 else
   echo "export PATH=\"/home/vagrant/bin:$PATH\"" >> /home/vagrant/.profile
   echo "export PATH=\"/home/vagrant/bin:$PATH\"" >> /home/vagrant/.zshenv
-  wget -q http://chromedriver.googlecode.com/files/chromedriver_linux64_21.0.1180.4.zip
-  unzip chromedriver_linux64_21.0.1180.4.zip
+  wget -q http://chromedriver.storage.googleapis.com/2.9/chromedriver_linux64.zip
+  unzip chromedriver_linux64.zip 
   chown vagrant:vagrant chromedriver && mv chromedriver /home/vagrant/bin/chromedriver
 fi
 
